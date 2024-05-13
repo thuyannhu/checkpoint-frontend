@@ -1,13 +1,24 @@
 import "@/styles/globals.css";
 import Header from "@/components/Header";
+import {
+	ApolloClient,
+	InMemoryCache,
+	ApolloProvider,
+} from "@apollo/client";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
+
+const client = new ApolloClient({
+	cache: new InMemoryCache(),
+});
 
 function App({ Component, pageProps }: AppProps) {
   return (
 		<>
-			<Header />
-			<Component {...pageProps} />
+			<ApolloProvider client={client}>
+				<Header />
+				<Component {...pageProps} />
+			</ApolloProvider>
 		</>
 	);}
 
