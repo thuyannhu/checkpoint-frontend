@@ -7,9 +7,28 @@ export const GET_ALL_COUNTRIES = gql`
 			emoji
 			id
 			name
+			continent {
+				id
+				name
+			}
 		}
 	}
-`
+`;
+
+export const GET_COUNTRY_BY_CODE = gql`
+	query country($code: String!) {
+		country(code: $code) {
+			code
+			continent {
+				id
+				name
+			}
+			emoji
+			id
+			name
+		}
+	}
+`;
 
 export const GET_ALL_CONTINENTS = gql`
 	query Continents {
