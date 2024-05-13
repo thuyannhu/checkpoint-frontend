@@ -7,4 +7,5 @@ export default function Header() {
       <Link href="/">Countries</Link>
     </header>
   );
+  
 }
