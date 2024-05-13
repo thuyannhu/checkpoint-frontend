@@ -25,11 +25,15 @@ const Country = () => {
 	if (error) return <p>Error fetching country: {error.message}</p>;
 
 	return (
-		<div className="country-card">
-			<span className="emoji">{data?.country.emoji}</span>
-			<span className="name">Name : {data?.country.name}</span>
-			<span className="continent">Contient : {data?.country.continent.name}</span>
-		</div>
+			<div className="country">
+				<span className="emoji">{data?.country.emoji}</span>
+
+				<span className="name">Name : {data?.country.name}</span>
+
+				<span className="continent">
+					Continent : {data?.country.continent.name}
+				</span>
+			</div>
 	);
 };
 

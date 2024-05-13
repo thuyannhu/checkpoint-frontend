@@ -42,34 +42,28 @@ const NewCountry = () => {
 
   console.log(data)
  return (
-		<div className="card">
-			<form className="form-flex" onSubmit={handleSubmit(onSubmit)}>
-				<label>
-					Name <br />
-					<input className="text-field" {...register("name")} />
-				</label>
-
-				<br />
-
-				<label>
-					Emoji <br />
-					<input className="text-field" {...register("emoji")} />
-				</label>
-
-				<br />
-
-				<label>
-					Code <br />
-					<input className="text-field" {...register("code")} />
-				</label>
-
-				<br />
-
-				<br />
-
-				<input className="button" type="submit" />
-			</form>
-
+		<>
+			<div className="card">
+				<form className="form-flex" onSubmit={handleSubmit(onSubmit)}>
+					<label>
+						Name <br />
+						<input className="text-field" {...register("name")} />
+					</label>
+					<br />
+					<label>
+						Emoji <br />
+						<input className="text-field" {...register("emoji")} />
+					</label>
+					<br />
+					<label>
+						Code <br />
+						<input className="text-field" {...register("code")} />
+					</label>
+					<br />
+					<br />
+					<input className="button" type="submit" />
+				</form>
+			</div>
 			{loading ? (
 				<p>Loading countries...</p>
 			) : error ? (
@@ -85,8 +79,9 @@ const NewCountry = () => {
 					))}
 				</div>
 			)}
-		</div>
+		</>
  );
 };
+
 
 export default NewCountry;
